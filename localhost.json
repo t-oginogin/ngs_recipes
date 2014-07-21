@@ -1,0 +1,11 @@
+{
+  "run_list" : [
+      "recipe[bwa]"
+    ],
+
+  "bwa": {
+    "user": "ubuntu",
+    "dir": "/ngs/tools/bwa",
+    "ver": "0.7.8"
+  }
+}
