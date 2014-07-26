@@ -18,7 +18,7 @@ end
 bash 'bwa install' do
   user "#{bwa_user}"
 
-  not_if 'which bwa'
+  not_if "test -e #{bwa_dir}"
 
   code <<-EOL
     sudo mkdir -p #{bwa_dir}
@@ -32,12 +32,23 @@ bash 'bwa install' do
   EOL
 end
 
+file "/home/#{bwa_user}/bwa_path" do
+  not_if "test -e /home/#{bwa_user}/bwa_path"
+  user "#{bwa_user}"
+  group "#{bwa_user}"
+  content <<-EOL
+    export PATH=#{bwa_dir}/bwa-#{bwa_ver}/:$PATH
+  EOL
+  mode 0755
+end
+
 bash 'set bwa path' do
   user "#{bwa_user}"
 
   not_if "grep bwa /home/#{bwa_user}/.bashrc"
-
   code <<-EOL
-    echo "export PATH=#{bwa_dir}/bwa-#{bwa_ver}/:$PATH" >> /home/#{bwa_user}/.bashrc
+    cat /home/#{bwa_user}/bwa_path >> /home/#{bwa_user}/.bashrc
+    rm /home/#{bwa_user}/bwa_path
   EOL
 end
+
