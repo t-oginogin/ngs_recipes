@@ -1,12 +1,19 @@
 {
   "run_list" : [
       "recipe[vim]",
-      "recipe[bwa]"
+      "recipe[bwa]",
+      "recipe[samtools]"
     ],
 
   "bwa": {
     "user": "ubuntu",
     "dir": "/ngs/tools/bwa",
     "ver": "0.7.8"
+  },
+
+  "samtools": {
+    "user": "ubuntu",
+    "dir": "/ngs/tools/samtools",
+    "ver": "0.1.19"
   }
 }
