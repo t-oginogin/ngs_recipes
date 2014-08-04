@@ -4,7 +4,8 @@
       "recipe[bwa]",
       "recipe[samtools]",
       "recipe[bowtie2]",
-      "recipe[ncbi_tools]"
+      "recipe[ncbi_tools]",
+      "recipe[vicuna]"
     ],
 
   "bwa": {
@@ -30,5 +31,12 @@
     "dir": "/ngs/tools/ncbi_tools",
     "install_dir": "/ngs/tools/ncbi_cxx",
     "ver": "12_0_0"
+  },
+
+  "vicuna": {
+    "user": "ubuntu",
+    "dir": "/ngs/tools/vicuna",
+    "ncbi_cxx_dir": "/ngs/tools/ncbi_cxx",
+    "ver": "1.3"
   }
 }
