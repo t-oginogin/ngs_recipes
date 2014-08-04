@@ -3,7 +3,8 @@
       "recipe[vim]",
       "recipe[bwa]",
       "recipe[samtools]",
-      "recipe[bowtie2]"
+      "recipe[bowtie2]",
+      "recipe[ncbi_tools]"
     ],
 
   "bwa": {
@@ -22,5 +23,12 @@
     "user": "ubuntu",
     "dir": "/ngs/tools/bowtie2",
     "ver": "2.2.2"
+  },
+
+  "ncbi_tools": {
+    "user": "ubuntu",
+    "dir": "/ngs/tools/ncbi_tools",
+    "install_dir": "/ngs/tools/ncbi_cxx",
+    "ver": "12_0_0"
   }
 }
