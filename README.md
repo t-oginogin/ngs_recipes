@@ -4,6 +4,11 @@ Set up Next-Generation Sequencing tools.
 
 For Ubuntu 14.04 LTS.
 
+* vicuna
+* bwa
+* samtools
+* bowtie2
+
 1. repipe取得
 
     git clone https://github.com/t-oginogin/ngs_recipes.git /ngs/
