@@ -41,3 +41,23 @@ bash 'ncbi_tools install' do
     sudo chgrp #{ncbi_tools_user} -R #{ncbi_tools_install_dir}
   EOL
 end
+
+file "/home/#{ncbi_tools_user}/ncbi_tools_path" do
+  not_if "test -e /home/#{ncbi_tools_user}/ncbi_tools_path"
+  user "#{ncbi_tools_user}"
+  group "#{ncbi_tools_user}"
+  content <<-EOL
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH\:#{ncbi_tools_install_dir}/lib
+  EOL
+  mode 0755
+end
+
+bash 'set ncbi_tools path' do
+  user "#{ncbi_tools_user}"
+
+  not_if "grep ncbi /home/#{ncbi_tools_user}/.bashrc"
+  code <<-EOL
+    cat /home/#{ncbi_tools_user}/ncbi_tools_path >> /home/#{ncbi_tools_user}/.bashrc
+    rm /home/#{ncbi_tools_user}/ncbi_tools_path
+  EOL
+end
