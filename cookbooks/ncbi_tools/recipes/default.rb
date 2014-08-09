@@ -12,6 +12,10 @@ ncbi_tools_dir = node['ncbi_tools']['dir']
 ncbi_tools_install_dir = node['ncbi_tools']['install_dir']
 ncbi_tools_ver = node['ncbi_tools']['ver']
 
+package 'libbam-dev' do
+  action :install
+end
+
 bash 'download ncbi_tools' do
   user "#{ncbi_tools_user}"
 
