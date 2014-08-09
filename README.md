@@ -7,6 +7,7 @@ For Ubuntu 14.04 LTS.
 * vicuna
 * bwa
 * samtools
+* bowtie
 * bowtie2
 
 1. repipe取得
