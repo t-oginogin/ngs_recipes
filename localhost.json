@@ -30,7 +30,7 @@
   "bowtie2": {
     "user": "ubuntu",
     "dir": "/ngs/tools/bowtie2",
-    "ver": "2.2.2"
+    "ver": "2.2.3"
   },
 
   "ncbi_tools": {
