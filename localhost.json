@@ -6,7 +6,8 @@
       "recipe[bowtie]",
       "recipe[bowtie2]",
       "recipe[ncbi_tools]",
-      "recipe[vicuna]"
+      "recipe[vicuna]",
+      "recipe[fastx_toolkit]"
     ],
 
   "bwa": {
@@ -45,5 +46,11 @@
     "dir": "/ngs/tools/vicuna",
     "ncbi_cxx_dir": "/ngs/tools/ncbi_cxx",
     "ver": "1.3"
+  },
+
+  "fastx_toolkit": {
+    "user": "ubuntu",
+    "dir": "/ngs/tools/fastx_toolkit",
+    "ver": "0.0.14"
   }
 }
