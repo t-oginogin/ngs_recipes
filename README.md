@@ -9,6 +9,7 @@ For Ubuntu 14.04 LTS.
 * samtools
 * bowtie
 * bowtie2
+* fastx_toolkit
 
 1. repipe取得
 
