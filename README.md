@@ -1,4 +1,7 @@
 ngs_recipes
+
+This software is released under the MIT License, see LICENSE.
+
 ===========
 Set up Next-Generation Sequencing tools.
 
